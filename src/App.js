@@ -5,17 +5,39 @@ import Button from "./components/Button";
 
 import axios from "./apis/api";
 import Navbar from "./components/Navbar";
-import { Layout, Row, Col } from "antd";
+import { Layout, Row, Col, Slider, Menu, Breadcrumb } from "antd";
 import Tab from "./components/Tab";
 
-const { Content } = Layout;
+
+const { SubMenu } = Menu;
+const { Content, Footer } = Layout;
 function App() {
+  const [collapsed, setCollapse] = useState(false);
+
+  const onCollapse = (collapsed) => {
+    setCollapse(true);
+  } 
   return (
       <Layout>
         <Navbar />
-        <Content style={{ padding: '0 30px', maxWidth: '500px' }}>
+        <Layout>
+        </Layout>
+        <Layout>
+        <Content style={{ padding: '0 50px', minHeight: '90vh' }} >
+        <Breadcrumb style={{ margin: '16px 0' }}>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>App</Breadcrumb.Item>
+      </Breadcrumb>
+          <div style={{display: 'flex', justifyContent:"center"}}>
           <Tab />
+          </div>
         </Content>
+        <Footer>
+        AeternitySwap © 2021 Created by AeternitySwap
+          </Footer>
+
+        </Layout>
+        
       </Layout>
   );
 }

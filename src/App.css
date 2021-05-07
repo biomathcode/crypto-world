@@ -1,6 +1,8 @@
 
 .navbar {
   margin-bottom: 5px;
+  background-color: white;
+  color: #452A7A;
   box-shadow:   rgb(125 125 125 / 50%) 0px 2px 3px 0px;
 }
 
@@ -13,7 +15,6 @@
 .ant-tabs-nav-more {
   display: none
 }
-
 
 
 .anticon {
@@ -103,4 +104,16 @@ border-radius: 5px;
   font-size: x-large;
   font-weight: bold;
 line-height: 25px;
+margin-bottom: 5px;
+padding-bottom: 10px;
+}
+
+.submitForm span {
+  margin: 2px;
+}
+
+.submitForm:hover {
+  border: 1px solid #1FC7D4;
+  background: white;
+  color: #1FC7D4
 }
