@@ -4,10 +4,13 @@ import React, { useState } from "react";
 import axios from "./../../apis/api";
 import { ArrowDownOutlined } from "@ant-design/icons";
 
+// for token us "0xfFe1426e77CE0F7c0945fCC1f4196CD8dC3f090A
+// for amoutn us "1000000"
+
 const FormContainer = () => {
-  const [amount, setAmount] = useState("1000000");
-  const [AE, setAE] = useState("0xfFe1426e77CE0F7c0945fCC1f4196CD8dC3f090A");
-  const [ETH, setETH] = useState("0xfFe1426e77CE0F7c0945fCC1f4196CD8dC3f090A");
+  const [amount, setAmount] = useState();
+  const [AE, setAE] = useState();
+  const [ETH, setETH] = useState();
 
   const [loading, setLoading] = useState(false);
 
