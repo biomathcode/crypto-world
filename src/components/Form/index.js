@@ -1,4 +1,4 @@
-import { Form, Input, InputNumber, Button, notification } from "antd";
+import { Button, notification } from "antd";
 import React, { useState } from "react";
 
 import axios from "./../../apis/api";
@@ -8,7 +8,6 @@ const FormContainer = () => {
   const [amount, setAmount] = useState("1000000");
   const [AE, setAE] = useState("0xfFe1426e77CE0F7c0945fCC1f4196CD8dC3f090A");
   const [ETH, setETH] = useState("0xfFe1426e77CE0F7c0945fCC1f4196CD8dC3f090A");
-  const [err, setERR] = useState("no error");
 
   const [loading, setLoading] = useState(false);
 
@@ -25,10 +24,7 @@ const FormContainer = () => {
       .then((res) => {
         if (res.status === 200) {
           console.log(res.data);
-          setERR(
-            "Minting status: " + res.data.msg + "  status :",
-            res.data.status
-          );
+          
           notification.open({
             message: `Working on your request... `,
             description: `Minting Status: ${res.data.msg} status: ${res.data.status}`,
@@ -46,10 +42,7 @@ const FormContainer = () => {
             .then((res) => {
               if (res.status === 200) {
                 console.log(res.data);
-                setERR(
-                  "Burning status :" + res.data.msg + "  status :",
-                  res.data.status
-                );
+                
                 notification.open({
                   message: `Working on your request... `,
                   description: `Burning Status: ${res.data.msg} status: ${res.data.status}`,
@@ -61,7 +54,6 @@ const FormContainer = () => {
                 setLoading(false)
 
               } else {
-                setERR("API call to burn ", res.status);
                 notification.open({
                   message: "ERROR",
                   description:
